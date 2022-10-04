@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shaimaa.emara\\Desktop\\Day1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\shaimaa.emara\\Desktop\\dotnet_training\\Day1\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shaimaa.emara\\Desktop\\Day1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\shaimaa.emara\\Desktop\\dotnet_training\\Day1\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shaimaa.emara\\Desktop\\Day1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\shaimaa.emara\\Desktop\\dotnet_training\\Day1\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\shaimaa.emara\\Desktop\\Day1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "C:\\Users\\shaimaa.emara\\Desktop\\dotnet_training\\Day1\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\shaimaa.emara\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shaimaa.emara\\Desktop\\Day1\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\shaimaa.emara\\Desktop\\dotnet_training\\Day1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shaimaa.emara\\AppData\\Roaming\\NuGet\\NuGet.Config",

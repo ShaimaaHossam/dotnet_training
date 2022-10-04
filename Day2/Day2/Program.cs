@@ -7,16 +7,29 @@ namespace Day2
         public static void Main(string[] args)
         {
             Employee[] EmpArr = ScanInputs();
-            foreach(Employee emp in EmpArr)
-            {
-                Console.WriteLine(emp.ToString());
-            }
+
+            Console.WriteLine("Before Sorting");
+            PrintEmployees(EmpArr);
+            
+            EmpArr = EmpArr.OrderBy(y => y.HireDate.year)
+                .ThenBy(m=>m.HireDate.month).ThenBy(d => d.HireDate.day).ToArray();
+
+
+            Console.WriteLine("After Sorting");
+            PrintEmployees(EmpArr);
+
 
 
         }
+        private static void PrintEmployees(Employee[] EmpArr)
+        {
+            foreach (Employee emp in EmpArr)
+            {
+                Console.WriteLine(emp.ToString());
+            }
+        }
 
-        
-      
+
         public static Employee[] ScanInputs()
         {
 
