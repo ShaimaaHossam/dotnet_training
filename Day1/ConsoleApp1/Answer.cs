@@ -10,9 +10,10 @@ namespace ConsoleApp1
     {        
         public string AnswerValue { get; set; }
         public bool isCorrect { get; set; }
-        public Answer(string value)
+        public Answer(string value, bool isCorrect )
         {
             AnswerValue = value;
+            this.isCorrect = isCorrect;
         }
     }
 }

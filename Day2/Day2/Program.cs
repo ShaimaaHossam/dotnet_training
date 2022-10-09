@@ -6,22 +6,22 @@ namespace Day2
     {
         public static void Main(string[] args)
         {
-            Employee[] EmpArr = ScanInputs();
+            List<Employee> EmpList = ScanInputs();
 
             Console.WriteLine("Before Sorting");
-            PrintEmployees(EmpArr);
-            
-            EmpArr = EmpArr.OrderBy(y => y.HireDate.year)
-                .ThenBy(m=>m.HireDate.month).ThenBy(d => d.HireDate.day).ToArray();
+            PrintEmployees(EmpList);
+         
+
+            EmpList.Sort();
 
 
             Console.WriteLine("After Sorting");
-            PrintEmployees(EmpArr);
+            PrintEmployees(EmpList);
 
 
 
         }
-        private static void PrintEmployees(Employee[] EmpArr)
+        private static void PrintEmployees(List<Employee> EmpArr)
         {
             foreach (Employee emp in EmpArr)
             {
@@ -30,10 +30,10 @@ namespace Day2
         }
 
 
-        public static Employee[] ScanInputs()
+        public static List<Employee> ScanInputs()
         {
 
-            Employee[] EmpArr = new Employee[3];
+            List<Employee> EmpArr = new List<Employee>(3);
 
             for (int i = 0; i < 3; i++)
             {
@@ -46,7 +46,7 @@ namespace Day2
                 decimal salary = GetSalary();
 
                 Employee employee = new Employee(ID, securityPriv, HireDay, HireMonth, HireYear, gender, salary);
-                EmpArr[i] = employee;
+                EmpArr.Add(employee);
             }
 
             return EmpArr;

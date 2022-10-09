@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Day2
 {
-    struct Employee
+    struct Employee : IComparable<Employee>
     {
         public string ID { get; set; }
         public SecurityPrivileges SecurityLevel { get; set; }
@@ -29,6 +29,20 @@ namespace Day2
                     $"\nGender: {gender}" +
                     $"\nSalary: {String.Format("{0:C}",Salary)}";
 
+        }
+
+        public int CompareTo(Employee other)
+        {
+            if(HireDate.year.CompareTo(other.HireDate.year) == 0)
+            {
+                if(HireDate.month.CompareTo(other.HireDate.month) == 0)
+                {
+                    return HireDate.day.CompareTo(other.HireDate.day);
+                }
+                return HireDate.month.CompareTo(other.HireDate.month);
+            }
+
+            return HireDate.year.CompareTo(other.HireDate.year);
         }
     }
 

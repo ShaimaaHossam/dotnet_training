@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class AnswersList : List<Answer>
+    internal class AnswersList<Answer> : List<Answer>
     {
 
         
-        public AnswersList(List<Answer> answers)
-        {
-            this = answers;
-        }
     }
 }

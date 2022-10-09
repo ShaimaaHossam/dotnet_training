@@ -6,33 +6,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Collections.Generic;
+using System.Globalization;
+
 namespace ConsoleApp1
 {
-    class QuestionsList<Question> : List<Question>
+    class QuestionsList<Quesion> : List<Question>
     {
         public static int ListsCount =0;
         private TextWriter writeFile;
         public QuestionsList(){
             ListsCount++;
-            writeFile = new StreamWriter($"questionList{ListsCount}.txt");
+            writeFile = File.CreateText($"questionList{ListsCount}.txt");
         }
-        public override void Add(Question question)
+        public void AddQ(Question question)
         {
             this.Add(question);
 
-            try {
-                foreach (var q in this)
-                {
-                    writeFile.WriteLine(q.Body);
-                }
-
-                writeFile.Flush();
-                writeFile.Close();
-                writeFile = null;
-            } catch(IOException ex)
+            using (this.writeFile)
             {
-                Console.WriteLine(ex.Message);
+                writeFile.WriteLine($"Question: {question.Body}");
             }
+            Console.ReadKey();
             
         }
     }

@@ -10,14 +10,18 @@ namespace ConsoleApp1
     {
         public override void ShowExam()
         {
-            foreach(var question in this.Questions)
+            if (this.hasEnded)
             {
-                Console.WriteLine(question.Body);
-                foreach(var answer in question.Answers)
+                foreach(KeyValuePair<Question, Answer[]> pair in this.QADictionary)
                 {
-                    Console.WriteLine(answer.AnswerValue);
+                    Console.WriteLine($"Question: {pair.Key.Body}");
+                    foreach(Answer answer in pair.Key.Answers)
+                    {
+                        Console.WriteLine($"- {answer.AnswerValue}");
+                    }
                 }
             }
         }
+
     }
 }

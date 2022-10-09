@@ -8,11 +8,25 @@ namespace ConsoleApp1
 {
     internal class PracticeExam : Exam
     {
+        public PracticeExam(QuestionsList<Question> questions, AnswersList<Answer> answer)
+        {
+
+        }
         public override void ShowExam()
         {
-            foreach(var question in this.Questions)
+            if (this.hasEnded)
             {
-                Console.WriteLine(question.CorrectAnswer);
+                foreach (KeyValuePair<Question, Answer[]> pair in this.QADictionary)
+                {
+                    Console.WriteLine($"Question: {pair.Key.Body}");
+                    foreach(Answer answer in pair.Value)
+                    {
+                        if (answer.isCorrect)
+                        {
+                            Console.WriteLine($"- {answer.AnswerValue}");
+                        }
+                    }
+                }
             }
         }
     }
